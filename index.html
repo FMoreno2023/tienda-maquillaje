@@ -20,7 +20,8 @@
             <a href="#">Inicio</a>
             <a href="#">Maquillaje</a>
             <a href="#">Skincare</a>
-            <a href="#">🛒 Carrito</a>
+            <a href="#carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</a>
+ 
         </nav>
  
     </header>
@@ -112,7 +113,18 @@
     <footer>
  
         <p>© 2026 Secretos de Belleza</p>
+ <section id="carrito" class="carrito">
  
+    <h2>🛒 Tu carrito</h2>
+ 
+    <div id="lista-carrito">
+        <p>Tu carrito está vacío.</p>
+    </div>
+ 
+    <h3>Total: $<span id="total-carrito">0</span></h3>
+ 
+</section>
+     
     </footer>
 
  <script src="script.js"></script>
