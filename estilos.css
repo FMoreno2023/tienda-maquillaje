@@ -1,40 +1,161 @@
+/* Diseño general */
+ 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #fdf5f8;
-    color: #333;
+    background-color: #111111;
+    color: #f5f5f5;
 }
  
-header {
-    background-color: #d96c92;
-    color: white;
-    text-align: center;
+ 
+/* Encabezado */
+ 
+.encabezado {
+    background-color: #0a0a0a;
     padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid #c9a227;
 }
  
-h1 {
-    margin: 0;
+.encabezado h1 {
+    margin: 0 0 20px;
+    font-family: Georgia, serif;
+    font-size: 32px;
 }
  
-.productos {
+ 
+/* Menú */
+ 
+nav {
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 40px;
 }
+ 
+nav a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+}
+ 
+nav a:hover {
+    color: white;
+}
+ 
+ 
+/* Bienvenida */
+ 
+.bienvenida {
+    text-align: center;
+    padding: 70px 20px;
+}
+ 
+.bienvenida h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: #d4af37;
+}
+ 
+.bienvenida p {
+    font-size: 18px;
+}
+ 
+ 
+/* Productos */
+ 
+.productos {
+    padding: 40px 20px;
+    text-align: center;
+}
+ 
+.productos h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #d4af37;
+}
+ 
+ 
+.lista-productos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+ 
+ 
+/* Tarjetas */
  
 .producto {
-    background-color: white;
+    background-color: #1c1c1c;
+    width: 230px;
     padding: 25px;
-    width: 200px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #333333;
+    border-radius: 12px;
+    transition: transform 0.3s;
 }
  
+.producto:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+ 
+ 
+/* Imagen */
+ 
+.imagen-producto {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    background-color: #151515;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+ 
+ 
+/* Información */
+ 
+.producto h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+ 
+.producto strong {
+    display: block;
+    color: #d4af37;
+    font-size: 20px;
+    margin: 15px 0;
+}
+ 
+ 
+/* Botón */
+ 
 button {
-    background-color: #d96c92;
-    color: white;
+    background-color: #d4af37;
+    color: #111111;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+button:hover {
+    background-color: #f0d36b;
+}
+ 
+ 
+/* Pie de página */
+ 
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    border-top: 1px solid #333333;
+    color: #aaaaaa;
+}
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
