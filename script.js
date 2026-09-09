@@ -1,50 +1,38 @@
 let carrito = [];
  
- 
-// Agregar producto
 function agregarAlCarrito(nombre, precio) {
  
-    // Buscar si el producto ya está en el carrito
-    const productoExistente = carrito.find(
-        producto => producto.nombre === nombre
-    );
+    let producto = carrito.find(p => p.nombre === nombre);
  
-    if (productoExistente) {
- 
-        productoExistente.cantidad++;
- 
+    if (producto) {
+        producto.cantidad++;
     } else {
- 
         carrito.push({
             nombre: nombre,
             precio: precio,
             cantidad: 1
         });
- 
     }
  
     actualizarCarrito();
 }
  
  
-// Actualizar carrito
 function actualizarCarrito() {
  
-    const lista = document.getElementById("lista-carrito");
-    const contador = document.getElementById("contador-carrito");
-    const total = document.getElementById("total-carrito");
+    let lista = document.getElementById("lista-carrito");
+    let contador = document.getElementById("contador-carrito");
+    let total = document.getElementById("total-carrito");
  
     lista.innerHTML = "";
  
-    let cantidadTotal = 0;
+    let totalProductos = 0;
     let totalCompra = 0;
  
  
-    // Si está vacío
     if (carrito.length === 0) {
  
         lista.innerHTML = "<p>Tu carrito está vacío.</p>";
- 
         contador.textContent = "0";
         total.textContent = "0";
  
@@ -52,49 +40,40 @@ function actualizarCarrito() {
     }
  
  
-    // Mostrar productos
-    carrito.forEach((producto, indice) => {
+    carrito.forEach(function(producto, indice) {
  
-        cantidadTotal += producto.cantidad;
+        let subtotal = producto.precio * producto.cantidad;
  
-        const subtotal = producto.precio * producto.cantidad;
- 
+        totalProductos += producto.cantidad;
         totalCompra += subtotal;
  
  
-        const elemento = document.createElement("div");
+        let elemento = document.createElement("div");
  
         elemento.innerHTML = `
+            <h3>${producto.nombre}</h3>
+ 
+            <p>Precio: $${producto.precio}</p>
+ 
             <p>
-                <strong>${producto.nombre}</strong>
-                <br>
- 
-                Precio: $${producto.precio}
- 
-                <br>
- 
                 Cantidad:
+ 
                 <button onclick="cambiarCantidad(${indice}, -1)">
                     -
                 </button>
  
-                ${producto.cantidad}
+                <strong>${producto.cantidad}</strong>
  
                 <button onclick="cambiarCantidad(${indice}, 1)">
                     +
                 </button>
- 
-                <br>
- 
-                Subtotal: $${subtotal}
- 
-                <br>
- 
-                <button onclick="eliminarDelCarrito(${indice})">
-                    Eliminar
-                </button>
- 
             </p>
+ 
+            <p>Subtotal: $${subtotal}</p>
+ 
+            <button onclick="eliminarDelCarrito(${indice})">
+                Eliminar
+            </button>
  
             <hr>
         `;
@@ -104,37 +83,24 @@ function actualizarCarrito() {
     });
  
  
-    contador.textContent = cantidadTotal;
- 
+    contador.textContent = totalProductos;
     total.textContent = totalCompra;
 }
  
  
-// Cambiar cantidad
 function cambiarCantidad(indice, cambio) {
  
     carrito[indice].cantidad += cambio;
  
- 
-    // Si llega a cero, eliminar
     if (carrito[indice].cantidad <= 0) {
- 
         carrito.splice(indice, 1);
- 
     }
  
- 
     actualizarCarrito();
 }
  
  
-// Eliminar producto completo
 function eliminarDelCarrito(indice) {
- 
-    carrito.splice(indice, 1);
- 
-    actualizarCarrito();
-}
  
     carrito.splice(indice, 1);
  
