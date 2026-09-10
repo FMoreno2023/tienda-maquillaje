@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquillaje - Secretos de Belleza</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <h1>Secretos de Belleza</h1>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="maquillaje.html">Maquillaje</a>
+            <a href="#carrito">Carrito</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="productos">
+
+            <h2>Maquillaje</h2>
+
+            <div class="lista-productos">
+
+                <div class="producto">
+                    <div class="imagen-producto">
+                        Foto
+                    </div>
+
+                    <h3>Labial</h3>
+                    <p>Labial de larga duración.</p>
+                    <strong>$150</strong>
+
+                    <button onclick="agregarAlCarrito('Labial', 150)">
+                        Agregar al carrito
+                    </button>
+                </div>
+
+                <div class="producto">
+                    <div class="imagen-producto">
+                        Foto
+                    </div>
+
+                    <h3>Rubor</h3>
+                    <p>Rubor para darle color al rostro.</p>
+                    <strong>$200</strong>
+
+                    <button onclick="agregarAlCarrito('Rubor', 200)">
+                        Agregar al carrito
+                    </button>
+                </div>
+
+                <div class="producto">
+                    <div class="imagen-producto">
+                        Foto
+                    </div>
+
+                    <h3>Paleta de sombras</h3>
+                    <p>Paleta con diferentes tonos.</p>
+                    <strong>$350</strong>
+
+                    <button onclick="agregarAlCarrito('Paleta de sombras', 350)">
+                        Agregar al carrito
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Secretos de Belleza</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
