@@ -166,3 +166,46 @@ button:hover {
     background-color: #b94f75;
 }
  
+.categorias {
+    padding: 40px 20px;
+    text-align: center;
+}
+ 
+.categorias h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #d4af37;
+}
+ 
+.lista-categorias {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+ 
+.categoria {
+    background-color: #1c1c1c;
+    width: 220px;
+    padding: 25px;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+ 
+.categoria:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+ 
+.categoria h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #f5f5f5;
+}
+ 
+.categoria p {
+    color: #bbbbbb;
+    min-height: 48px;
+}
